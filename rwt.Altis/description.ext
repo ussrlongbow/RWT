@@ -1,0 +1,53 @@
+Respawn = 3;
+RespawnDelay = 5;
+DisabledAI = true;
+
+joinUnassigned = 0;
+enableDebugConsole = 1;
+allowFunctionsLog = 1;
+
+author="longbow";
+OnLoadName="Russian Warfare Toolset";
+OnLoadMission="Version 0.3 Alpha";
+
+corpseManagerMode = 1;
+corpseLimit = 100;
+corpseRemovalMinTime = 300;
+corpseRemovalMaxTime = 2400;
+
+wreckManagerMode = 1;
+wreckLimit = 20;
+wreckRemovalMinTime = 600;
+wreckRemovalMaxTime = 3600;
+
+forceRotorLibSimulation = 0;
+
+class Header
+{
+	gameType = CTI;
+	minPlayers = 1;
+	maxPlayers = 57;
+}
+
+#include "defines.hpp"
+#include "RWT\rwt_ui.hpp"
+
+class RscTitles {
+  #include "RWT\rwt_rsctitles.hpp"  
+};
+
+class Params {
+	#include "RWT\rwt_params.hpp"
+};
+
+class CfgSounds {
+	#include "RWT\rwt_sounds.hpp"
+};
+
+class CfgFunctions {
+	#include "RWT\rwt_functions.hpp"
+};
+
+class CfgNotifications {
+	#include "RWT\rwt_notifications.hpp"
+};

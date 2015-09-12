@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="Russian Warfare Toolset">
+	<Package name="Main">
+		<Container name="Common words, lower case">
+			<Key ID="str_RWT_words_yes">
+				<Original>yes</Original>
+				<English>yes</English>
+				<Czech>ano</Czech>
+				<French>oui</French>
+				<German>ja</German>
+				<Italian>sì</Italian>
+				<Polish>tak</Polish>
+				<Portuguese>sim</Portuguese>
+				<Russian>да</Russian>
+				<Spanish>sí</Spanish>
+			</Key>
+			<Key ID="str_RWT_words_no">
+				<Original>no</Original>
+				<English>no</English>
+				<Russian>нет</Russian>
+			</Key>
+		</Container>
+		<Container name="Common words, upper case first letter">
+			<Key ID="str_RWT_words_yes_upper1">
+				<Original>Yes</Original>
+				<English>Yes</English>
+				<Czech>Ano</Czech>
+				<French>Oui</French>
+				<German>Ja</German>
+				<Italian>Sì</Italian>
+				<Polish>Tak</Polish>
+				<Portuguese>Sim</Portuguese>
+				<Russian>Да</Russian>
+				<Spanish>Sí</Spanish>
+			</Key>
+			<Key ID="str_RWT_words_no_upper1">
+				<Original>No</Original>
+				<English>No</English>
+				<Russian>Нет</Russian>
+			</Key>
+		</Container>
+		<Container name="RWT Diary entries">
+			<Key ID="str_RWT_diary_help">
+				<Original>Help</Original>
+				<English>Help</English>
+				<Russian>Помощь</Russian>
+			</Key>
+			<Key ID="str_RWT_diary_rwt">
+				<Original>RWT</Original>
+				<English>RWT</English>
+				<Czech>RWT</Czech>
+				<French>RWT</French>
+				<German>RWT</German>
+				<Italian>RWT</Italian>
+				<Polish>RWT</Polish>
+				<Portuguese>RWT</Portuguese>
+				<Russian>RWT</Russian>
+				<Spanish>RWT</Spanish>
+			</Key>
+			<Key ID="str_RWT_diary_rwt_description">
+				<Original>Description</Original>
+				<English>Description</English>
+				<Russian>Описание</Russian>
+			</Key>
+		</Container>
+	</Package>
+</Project>
