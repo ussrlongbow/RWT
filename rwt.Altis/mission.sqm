@@ -12,7 +12,8 @@ class Mission
 		"A3_Soft_F_SUV",
 		"A3_Characters_F_OPFOR",
 		"a3_characters_f",
-		"A3_Air_F_Beta_Heli_Attack_02"
+		"A3_Air_F_Beta_Heli_Attack_02",
+		"A3_Boat_F_SDV_01"
 	};
 	addOnsAuto[]=
 	{
@@ -70,6 +71,7 @@ class Mission
 					rank="COLONEL";
 					skill=0.60000002;
 					text="man1";
+					init="this allowdamage false;";
 					syncId=0;
 					synchronizations[]={1};
 				};

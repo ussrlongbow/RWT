@@ -34,9 +34,6 @@ class RWT
 	class forPlayers {
 		file = "RWT\functions\forPlayers";
 		class initPlayer;
-		class getNades;
-		class switchNade;
-		class fireCurrentNade;
 		class toggleEarplugs;
 		class toggleLights;
 	};
@@ -55,6 +52,10 @@ class RWT
 		class spawnNotification;
 		class spawnWeaponMenu;
 		class swapSidemount;
+		class uiDebug;
+		class scrollNumber;
+		class expLocalizeBombName;
+		class expFindBombImage;
 	};
 	class forVehicles {
 		file = "RWT\functions\forVehicles";

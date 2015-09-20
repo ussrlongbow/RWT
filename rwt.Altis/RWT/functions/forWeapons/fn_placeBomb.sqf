@@ -20,60 +20,74 @@ Example:
 
 *****************************************************************************/
 
-private ["_bomb","_new_bomb","_pos","_vectordir","_vectorup","_target","_act"];
-//systemchat "Placing ordnance";
+private ["_bomb","_bomb_type","_new_bomb","_pos","_pos2","_vectordir","_vectorup","_target","_act"];
 
-_pos = [];
-_vectordir = [];
-_vectorup = [];
 // if we attaching bomb to object, get this object
 _target = player getVariable ["rwt_explosives_target",objNull];
 
 // Prohibit placing bombs on men
 if (_target isKindOf "Man") exitWith {systemChat "Cannot place bombs on men!"};
 
+// turn of 3d interface
+["rwt_explosives_iface","onEachFrame"] call BIS_fnc_removeStackedEventHandler;
+
 // Get the local bomb object from 3d interface
 _bomb = player getVariable ["rwt_explosives_curr",objNull];
+// remove reference to local bomb object from player's vars
+player setVariable ["rwt_explosives_curr",objNull,false];
+_bomb_type = typeOf _bomb;
 
-// if no target, place bomb on the ground
+// Set initial values for bomb position, direction and up vector
+_pos = getPosATL _bomb;
+_vectordir = vectorDir _bomb;
+_vectorup = vectorUp _bomb;
+_pos2 = [];
+
+
+deleteVehicle _bomb;
+
+// Store the type of ammo, used in config dialog for localization
+player setVariable ["rwt_explosives_curr_type",_bomb_type];
+
 if (isNull _target) then {
-	//systemChat "Placing bomb without attach";
-	_pos = getPos _bomb;
-	_vectordir = vectorDir _bomb;
-	_vectorup = vectorUp _bomb;
-	_new_bomb = (typeOf _bomb) createVehicle _pos;
+	// if no target, place bomb on the ground
+	_new_bomb = _bomb_type createVehicle [(_pos select 0),(_pos select 1),0];
 	_new_bomb setVectorDirAndUp [_vectordir,_vectorup];
-	player removeMagazine (getText (configFile >> "CfgAmmo" >> (typeOf _bomb) >> "defaultMagazine"));
-	deleteVehicle _bomb;
+	player removeMagazine (getText (configFile >> "CfgAmmo" >> _bomb_type >> "defaultMagazine"));
 	// Add temporary action to detonate bomb, to be replaced in future
-	_act = player addAction ["Detonate",{detach (_this select 3); (_this select 3) setDamage 1; removeAllActions player},_target,5,false];
-	// Store the id of detonate action
-	player setVariable ["rwt_detonate_act",_act,false];
-// placing on target
+	_act = player addAction [
+		"Detonate",
+		{
+			detach (_this select 3);
+			(_this select 3) setDamage 1;
+			player removeAction (_this select 2)},
+		_new_bomb,5,false];
+	player setUserActionText [_act,format ["Detonate #%1",_act]];
 } else {
-	//systemChat "Placing bomb with attach";
-	_pos = getPos _bomb;
-	//_vectordir = vectorDir _bomb;
-	_vectorup = vectorUp _bomb;
-	_pos = _target worldToModelVisual _pos;
-	_new_bomb = (typeOf _bomb) createVehicle [0,0,0];
-	_new_bomb attachTo [_target,_pos];
+	// placing on target
+	_new_bomb = _bomb_type createVehicle _pos;
+	_pos2 = _target worldToModel _pos;
+	_new_bomb attachTo [_target,_pos2];
 	_new_bomb setVectorUp _vectorup;
-	player removeMagazine (getText (configFile >> "CfgAmmo" >> (typeOf _bomb) >> "defaultMagazine"));
-	deleteVehicle _bomb;
-	_act = player addAction ["Detonate",{detach (_this select 3); (_this select 3) setDamage 1; removeAllActions player},_target,5,false];
-	player setVariable ["rwt_detonate_act",_act,false];
+	player removeMagazine (getText (configFile >> "CfgAmmo" >> _bomb_type >> "defaultMagazine"));
+	_act = player addAction [
+		"Detonate",
+		{
+			//detach (_this select 3);
+			(_this select 3) setDamage 1;
+			player removeAction (_this select 2)},
+		_new_bomb,5,false];
+	player setUserActionText [_act,format ["Detonate #%1",_act]];
 };
 
-// just in case delete local bomb object
-deleteVehicle (player getVariable ["rwt_explosives_curr",objNull]);
+// store placed bomb object to be referenced by config dialog
+player setVariable ["rwt_explosives_curr",_new_bomb,false];
 // set interface presence var to false
 player setVariable ["rwt_explosives_iface",false,false];
-// remove local bomb object from player's var
-player setVariable ["rwt_explosives_curr",objNull,false];
 // restore EHs for mouse wheel
 inGameUISetEventHandler ["PrevAction", RWT_IGUI_EH_PRE];
 inGameUISetEventHandler ["NextAction", RWT_IGUI_EH_NEX];
 inGameUISetEventHandler ["Action", RWT_IGUI_EH_ACT];
-// turn of 3d interface
-["rwt_explosives_iface","onEachFrame"] call BIS_fnc_removeStackedEventHandler;
+
+// Launch explosives configuration dialog
+createDialog "RWT_UI_Explosives_Config";

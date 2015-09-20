@@ -1,13 +1,13 @@
-class RscText {
+class RWT_RscText {
     access = 0;
     idc = -1;
-    type = CT_STATIC;
-    style = ST_CENTER;
+    type = RWT_CT_STATIC;
+    style = RWT_ST_CENTER;
     linespacing = 0;
-    colorBackground[] = {0,0,0,0};
-    colorText[] = {1,1,0,1};
-	colorBorder[] = {0,0,0,0};
-    text = "Test";
+    colorBackground[] = RWT_C_TRANSPARENT;
+    colorText[] = RWT_C_YELLOW;
+	colorBorder[] = RWT_C_TRANSPARENT;
+    text = "";
     shadow = 0;
     font = "PuristaLight";
     sizeEx = "0.035 / (getResolution select 5)";
@@ -17,13 +17,13 @@ class RscText {
 	h = 0.1  * safezoneH;
 };
 
-class RscPicture {
+class RWT_RscPicture {
     access = 0;
     idc = -1;
-    type = CT_STATIC;
-    style = ST_PICTURE;
-    colorBackground[] = {0,0,0,0};
-    colorText[] = {0,0,0,0};
+    type = RWT_CT_STATIC;
+    style = RWT_ST_PICTURE;
+    colorBackground[] = RWT_C_TRANSPARENT;
+    colorText[] = RWT_C_TRANSPARENT;
     font = "PuristaLight";
     sizeEx = 0;
     lineSpacing = 0;
@@ -36,8 +36,8 @@ class RscPicture {
     h = 0.025 * safezoneH;
 };
 
-class RscPictureKeepAspect: RscPicture {
-	style = ST_PICTURE + ST_KEEP_ASPECT_RATIO;
+class RWT_RscPictureKeepAspect: RWT_RscPicture {
+	style = RWT_ST_PICTURE + RWT_ST_KEEP_ASPECT_RATIO;
 };
 
 #include "ui\rwt_menu_dummy.hpp"

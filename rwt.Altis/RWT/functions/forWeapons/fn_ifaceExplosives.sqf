@@ -55,6 +55,7 @@ inGameUISetEventHandler ["Action", "[] call RWT_fnc_placeBomb; true"];
 	if (count _ins == 0) exitWith {
 		_obj setPos (positionCameraToWorld [0,0,1.5]);
 		_obj setVectorUp [0,0,1];
+		player setVariable ["rwt_explosives_target",objNull,false];
 	};
 	_obj setPosASL (_ins select 0 select 0); 
 	_obj setVectorUp (_ins select 0 select 1);

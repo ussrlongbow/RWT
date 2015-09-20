@@ -1,67 +1,93 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project name="Russian Warfare Toolset">
-	<Package name="Main">
-		<Container name="Common words, lower case">
-			<Key ID="str_RWT_words_yes">
-				<Original>yes</Original>
-				<English>yes</English>
-				<Czech>ano</Czech>
-				<French>oui</French>
-				<German>ja</German>
-				<Italian>sì</Italian>
-				<Polish>tak</Polish>
-				<Portuguese>sim</Portuguese>
-				<Russian>да</Russian>
-				<Spanish>sí</Spanish>
-			</Key>
-			<Key ID="str_RWT_words_no">
-				<Original>no</Original>
-				<English>no</English>
-				<Russian>нет</Russian>
-			</Key>
-		</Container>
-		<Container name="Common words, upper case first letter">
-			<Key ID="str_RWT_words_yes_upper1">
-				<Original>Yes</Original>
-				<English>Yes</English>
-				<Czech>Ano</Czech>
-				<French>Oui</French>
-				<German>Ja</German>
-				<Italian>Sì</Italian>
-				<Polish>Tak</Polish>
-				<Portuguese>Sim</Portuguese>
-				<Russian>Да</Russian>
-				<Spanish>Sí</Spanish>
-			</Key>
-			<Key ID="str_RWT_words_no_upper1">
-				<Original>No</Original>
-				<English>No</English>
-				<Russian>Нет</Russian>
-			</Key>
-		</Container>
-		<Container name="RWT Diary entries">
-			<Key ID="str_RWT_diary_help">
-				<Original>Help</Original>
-				<English>Help</English>
-				<Russian>Помощь</Russian>
-			</Key>
-			<Key ID="str_RWT_diary_rwt">
-				<Original>RWT</Original>
-				<English>RWT</English>
-				<Czech>RWT</Czech>
-				<French>RWT</French>
-				<German>RWT</German>
-				<Italian>RWT</Italian>
-				<Polish>RWT</Polish>
-				<Portuguese>RWT</Portuguese>
-				<Russian>RWT</Russian>
-				<Spanish>RWT</Spanish>
-			</Key>
-			<Key ID="str_RWT_diary_rwt_description">
-				<Original>Description</Original>
-				<English>Description</English>
-				<Russian>Описание</Russian>
-			</Key>
-		</Container>
-	</Package>
+  <Package name="Main">
+    <Container name="Common words, lower case">
+      <Key ID="str_RWT_words_yes">
+        <Original>yes</Original>
+        <English>yes</English>
+        <Czech>ano</Czech>
+        <French>oui</French>
+        <Spanish>sí</Spanish>
+        <Italian>sì</Italian>
+        <Polish>tak</Polish>
+        <Portuguese>sim</Portuguese>
+        <Russian>да</Russian>
+        <German>ja</German>
+      </Key>
+      <Key ID="str_RWT_words_no">
+        <Original>no</Original>
+        <English>no</English>
+        <Russian>нет</Russian>
+      </Key>
+    </Container>
+    <Container name="Common words, upper case first letter">
+      <Key ID="str_RWT_words_yes_upper1">
+        <Original>Yes</Original>
+        <English>Yes</English>
+        <Czech>Ano</Czech>
+        <French>Oui</French>
+        <Spanish>Sí</Spanish>
+        <Italian>Sì</Italian>
+        <Polish>Tak</Polish>
+        <Portuguese>Sim</Portuguese>
+        <Russian>Да</Russian>
+        <German>Ja</German>
+      </Key>
+      <Key ID="str_RWT_words_no_upper1">
+        <Original>No</Original>
+        <English>No</English>
+        <Russian>Нет</Russian>
+      </Key>
+    </Container>
+    <Container name="RWT Diary entries">
+      <Key ID="str_RWT_diary_help">
+        <Original>Help</Original>
+        <English>Help</English>
+        <Russian>Помощь</Russian>
+      </Key>
+      <Key ID="str_RWT_diary_rwt">
+        <Original>RWT</Original>
+        <English>RWT</English>
+        <Czech>RWT</Czech>
+        <French>RWT</French>
+        <Spanish>RWT</Spanish>
+        <Italian>RWT</Italian>
+        <Polish>RWT</Polish>
+        <Portuguese>RWT</Portuguese>
+        <Russian>RWT</Russian>
+        <German>RWT</German>
+      </Key>
+      <Key ID="str_RWT_diary_rwt_description">
+        <Original>Description</Original>
+        <English>Description</English>
+        <Russian>Описание</Russian>
+      </Key>
+    </Container>
+    <Container name="RWT UI Explosives config">
+      <Key ID="str_RWT_UI_DemoCharge_Remote_Ammo_Scripted">
+        <Original>C4 Charge</Original>
+        <English>C4 Charge</English>
+        <Czech>C4 Charge</Czech>
+        <French>C4 Charge</French>
+        <Spanish>C4 Charge</Spanish>
+        <Italian>C4 Charge</Italian>
+        <Polish>C4 Charge</Polish>
+        <Portuguese>C4 Charge</Portuguese>
+        <Russian>Заряд С4</Russian>
+        <German>C4 Charge</German>
+      </Key>
+      <Key ID="str_RWT_UI_SatchelCharge_Remote_Ammo_Scripted">
+        <Original>Satchel charge</Original>
+        <English>Satchel charge</English>
+        <Czech>Satchel charge</Czech>
+        <French>Satchel charge</French>
+        <Spanish>Satchel charge</Spanish>
+        <Italian>Satchel charge</Italian>
+        <Polish>Satchel charge</Polish>
+        <Portuguese>Satchel charge</Portuguese>
+        <Russian>Подрывной пакет</Russian>
+        <German>Satchel charge</German>
+      </Key>
+    </Container>
+  </Package>
 </Project>

@@ -22,10 +22,6 @@ Description:
 
 Arguments: NONE
 
-Example:
-"DemoCharge_Remote_Ammo_Scripted" call RWT_fnc_ifaceExplosives;
-// Will launch 3d interface for C4 charge
-
 *****************************************************************************/
 
 // Assigning RWT smart key to Left Windows key on keyboard
@@ -221,8 +217,11 @@ RWT_SM_SELF_ACTIONS_LIB = [
 	// 37: Use AT mine in 3d explosives interface
 	["AT mine",{"\A3\Weapons_F\Data\UI\gear_mine_AT_CA.paa"},{hint "AT mine"},{"ATMine_Range_Mag" in magazines player}],
 	
-	// 38: Use Claymore in 3d explosives interface
-	["Claymore",{"\A3\Weapons_F\Data\UI\gear_mine_AP_miniclaymore_CA.paa"},{hint "Claymore"},{"ClaymoreDirectionalMine_Remote_Mag" in magazines player}],
+	// 38: Use Claymore in 3d explosives interface "ClaymoreDirectionalMine_Remote_Ammo_Scripted"
+	["Claymore",
+	{"\A3\Weapons_F\Data\UI\gear_mine_AP_miniclaymore_CA.paa"},
+	{[] call RWT_fnc_smartMenuToggle; "ClaymoreDirectionalMine_Remote_Ammo_Scripted" call RWT_fnc_ifaceExplosives;},
+	{"ClaymoreDirectionalMine_Remote_Mag" in magazines player}],
 	
 	// 39: Use SLAM directional mine in 3d explosives interface
 	["SLAM",{"\A3\Weapons_F\Data\UI\gear_mine_SLAM_directional_CA.paa"},{hint "SLAM"},{"SLAMDirectionalMine_Wire_Mag" in magazines player}],

@@ -29,8 +29,8 @@ class Header
 	maxPlayers = 57;
 }
 
-#include "defines.hpp"
-#include "RWT\rwt_ui.hpp"
+
+#include "RWT\rwt_headers.hpp"
 
 class RscTitles {
   #include "RWT\rwt_rsctitles.hpp"  

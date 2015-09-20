@@ -1,7 +1,7 @@
 class RWT_MD_TEXT {
 	access = 0;
-	type = CT_STATIC;
-	style = ST_LEFT;
+	type = RWT_CT_STATIC;
+	style = RWT_ST_LEFT;
 	idc = -1;
 	colorBackground[] = {0,0,0,0};
 	colorText[] = {1,1,1,0.8};
